@@ -39,11 +39,11 @@ const Login = () => {
       <Form method="post" className="form">
         <Logo />
         <h4>login</h4>
-        <FormRow type="email" name="email" defaultValue="john@gmail.com" />
-        <FormRow type="password" name="password" defaultValue="secret123" />
+        <FormRow type="email" name="email" defaultValue="" />
+        <FormRow type="password" name="password" defaultValue="" />
         <SubmitBtn />
         <button type="button" className="btn btn-block" onClick={loginDemoUser}>
-          explore the app
+          explore the app <br /> (however not full functionality)
         </button>
         <p>
           Not a member yet?
