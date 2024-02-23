@@ -19,7 +19,7 @@ const Navbar = () => {
           <h6>
             {" "}
             Reinhild<span className="lower">`s </span>myBook App / copyright
-            2023
+            2024
           </h6>
         </div>
         <div>
