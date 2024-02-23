@@ -190,6 +190,8 @@
     "yargs-parser": "^21.1.1"
   },
   "scripts": {
+    "build": "npm install  && cd client && npm install && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "setup-project": "npm i && cd client && npm i",
     "server": "nodemon server",
     "client": "cd client && npm run dev",
