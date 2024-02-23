@@ -57,6 +57,18 @@ app.use((err, req, res, next) => {
   console.log(err);
   res.status(500).json({ msg: "something went wrong - message from server" });
 });
+import path from "path";
+__dirname = path.resolve();
+
+if (process.env.NODE_ENV === "production") {
+  // Set static folder
+  app.use(express.static(path.join(__dirname, "/client/build")));
+
+  // index.html for all page routes
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
+}
 
 const port = process.env.PORT || 5100;
 try {
