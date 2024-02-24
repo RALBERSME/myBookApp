@@ -16,6 +16,8 @@ import userRouter from "./routes/userRouter.js";
 //middleware
 import errorHandlerMiddleware from "./middleware/errorHandlerMiddleware.js";
 import { authenticateUser } from "./middleware/authMiddleware.js";
+import path from "path";
+import { fileURLToPath } from "url";
 
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
@@ -57,8 +59,10 @@ app.use((err, req, res, next) => {
   console.log(err);
   res.status(500).json({ msg: "something went wrong - message from server" });
 });
-import path from "path";
-__dirname = path.resolve();
+
+const __filename = fileURLToPath(import.meta.url);
+
+const __dirname = path.dirname(__filename);
 
 if (process.env.NODE_ENV === "production") {
   // Set static folder
